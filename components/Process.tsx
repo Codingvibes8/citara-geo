@@ -12,12 +12,12 @@ const steps = [
     title: "Audit & baseline",
     time: "Week 1–2",
     summary:
-      "We run hundreds of buyer prompts across every major engine to learn who gets recommended today, which sources models trust, and exactly where you're invisible.",
+      "We run hundreds of cosmetic surgery prompts across every major engine — 'best breast augmentation surgeon,' 'tummy tuck cost,' 'liposuction vs coolsculpting' — to learn who gets recommended today, which medical sources models trust, and exactly where your practice is invisible.",
     deliverables: [
-      "Prompt universe of 200–500 buyer questions",
-      "Share-of-voice baseline vs. 5 competitors",
+      "Prompt universe of 200–500 procedure-specific questions",
+      "Share-of-voice baseline vs. 5 competing practices",
       "Technical AI-readiness scorecard",
-      "Citation source map",
+      "Medical citation source map",
     ],
   },
   {
@@ -25,12 +25,12 @@ const steps = [
     title: "Strategy & roadmap",
     time: "Week 3",
     summary:
-      "We turn the gaps into a prioritized 90-day plan, ranking every opportunity by impact on pipeline, not just on mentions.",
+      "We turn the gaps into a prioritized 90-day plan, ranking every opportunity by impact on surgical bookings, not just on mentions.",
     deliverables: [
-      "Prioritized opportunity backlog",
+      "Prioritized opportunity backlog by procedure",
       "Content & entity architecture plan",
-      "Digital PR target list",
-      "KPI model tied to revenue",
+      "Medical PR target list (RealSelf, Healthgrades, ASPS)",
+      "KPI model tied to consultation bookings",
     ],
   },
   {
@@ -38,12 +38,12 @@ const steps = [
     title: "Build & publish",
     time: "Week 4–12",
     summary:
-      "Our strategists, writers and engineers ship in parallel: fixing technical blockers, publishing answer-first content and earning third-party citations.",
+      "Our strategists, writers and engineers ship in parallel: fixing technical blockers, publishing answer-first procedure pages and earning third-party citations on medical directories.",
     deliverables: [
       "Schema, llms.txt and crawler fixes",
-      "8–20 answer-first pages per month",
-      "Earned mentions on trusted sources",
-      "Wikipedia, review-site and forum presence",
+      "8–20 answer-first procedure pages per month",
+      "Earned mentions on RealSelf, Healthgrades, WebMD",
+      "Wikipedia, medical review-site and forum presence",
     ],
   },
   {
@@ -51,10 +51,10 @@ const steps = [
     title: "Measure & compound",
     time: "Ongoing",
     summary:
-      "Weekly tracking shows what moved. We double down on what models reward, and retire what they ignore. Gains compound month over month.",
+      "Weekly tracking shows what moved. We double down on what models reward for your highest-value procedures, and retire what they ignore. Gains compound month over month.",
     deliverables: [
       "Live share-of-voice dashboard",
-      "Monthly strategy & revenue review",
+      "Monthly strategy & booking review",
       "Competitor movement alerts",
       "Quarterly roadmap refresh",
     ],

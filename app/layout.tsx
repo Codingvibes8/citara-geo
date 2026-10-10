@@ -22,35 +22,36 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://citara.ai"),
-  title: "Citara — AI SEO Agency for ChatGPT, Perplexity & Google AI Search",
+  title: "Citara — AI SEO Agency for Cosmetic Surgery Practices",
   description:
-    "Citara is the AI SEO agency that gets your brand recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — while compounding your classic search rankings.",
+    "Citara is the AI SEO agency that gets cosmetic surgery practices recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — for high-value procedures like breast augmentation, body contouring, facelifts, tummy tucks and liposuction.",
   keywords: [
-    "AI SEO agency",
-    "generative engine optimization",
-    "GEO",
-    "AEO",
-    "answer engine optimization",
-    "ChatGPT visibility",
-    "Perplexity SEO",
-    "Google AI Overviews",
-    "LLM SEO",
+    "AI SEO for cosmetic surgery",
+    "GEO for plastic surgeons",
+    "generative engine optimization healthcare",
+    "ChatGPT visibility cosmetic surgery",
+    "AI SEO breast augmentation",
+    "AI SEO body contouring",
+    "AI SEO facelift",
+    "AI SEO tummy tuck",
+    "AI SEO liposuction",
+    "Perplexity SEO medical aesthetics",
   ],
   applicationName: "Citara",
   authors: [{ name: "Citara Labs, Inc." }],
   openGraph: {
     type: "website",
     siteName: "Citara",
-    title: "Citara — AI SEO Agency for ChatGPT, Perplexity & Google AI Search",
+    title: "Citara — AI SEO Agency for Cosmetic Surgery Practices",
     description:
-      "Get your brand recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — while compounding your classic search rankings.",
+      "Get your cosmetic surgery practice recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — for breast augmentation, body contouring, facelifts, tummy tucks and liposuction.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Citara — AI SEO Agency for ChatGPT, Perplexity & Google AI Search",
+    title: "Citara — AI SEO Agency for Cosmetic Surgery Practices",
     description:
-      "Get your brand recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — while compounding your classic search rankings.",
+      "Get your cosmetic surgery practice recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — for breast augmentation, body contouring, facelifts, tummy tucks and liposuction.",
   },
 };
 

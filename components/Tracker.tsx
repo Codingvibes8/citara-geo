@@ -177,8 +177,9 @@ export default function Tracker() {
             See exactly where AI mentions you.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-zinc-400 sm:text-lg">
-            Every client gets a live dashboard tracking hundreds of buyer prompts across every major engine. See your
-            share of voice, your competitors and the sources models pull from.
+            Every client gets a live dashboard tracking hundreds of cosmetic surgery prompts across every major engine.
+            See your share of voice for breast augmentation, body contouring, facelifts, tummy tucks and liposuction —
+            plus your competitors and the medical sources models pull from.
           </p>
 
           <div className="mt-8" role="tablist" aria-label="Select AI platform">

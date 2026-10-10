@@ -35,10 +35,10 @@ function ServiceCard({ icon, tag, title, description, className, delay = 0, chil
 
 function PromptVisual() {
   const prompts = [
-    { q: "best crm for startups", hit: true, pos: "#1" },
-    { q: "hubspot alternatives under $50", hit: true, pos: "#2" },
-    { q: "crm with built-in email sequences", hit: true, pos: "#1" },
-    { q: "easiest crm to migrate to", hit: false, pos: "—" },
+    { q: "best breast augmentation surgeon in Miami", hit: true, pos: "#1" },
+    { q: "tummy tuck cost and recovery time", hit: true, pos: "#1" },
+    { q: "liposuction vs coolsculpting which is better", hit: true, pos: "#2" },
+    { q: "facelift surgeon near me natural results", hit: false, pos: "—" },
   ];
   return (
     <div className="space-y-2">
@@ -112,10 +112,10 @@ function CodeVisual() {
 
 function ContentVisual() {
   const steps = [
-    { k: "H1", t: "How much does solar cost for a 2,000 sq ft home?", tone: "text-white" },
-    { k: "A", t: "40-word direct answer, with the number first", tone: "text-lime-brand" },
-    { k: "Proof", t: "Data table · expert quote · cited source", tone: "text-cyan-brand" },
-    { k: "Schema", t: "FAQPage · Article · Organization", tone: "text-violet-brand" },
+    { k: "H1", t: "How much does breast augmentation cost in 2026?", tone: "text-white" },
+    { k: "A", t: "40-word direct answer, with the price range first", tone: "text-lime-brand" },
+    { k: "Proof", t: "Surgeon credentials · before/after data · ASPS citation", tone: "text-cyan-brand" },
+    { k: "Schema", t: "FAQPage · MedicalProcedure · Physician", tone: "text-violet-brand" },
   ];
   return (
     <div className="grid gap-2 sm:grid-cols-2">
@@ -131,10 +131,10 @@ function ContentVisual() {
 
 function PRVisual() {
   const sources = [
-    ["g2.com", 94],
-    ["reddit.com", 88],
-    ["industry press", 76],
-    ["wikipedia.org", 71],
+    ["realself.com", 94],
+    ["healthgrades.com", 88],
+    ["plasticsurgery.org", 76],
+    ["webmd.com", 71],
   ] as const;
   return (
     <div className="space-y-2">
@@ -181,10 +181,10 @@ export default function Services() {
           eyebrow="What we do"
           title={
             <>
-              One system to win <span className="text-gradient">AI search</span> and Google
+              One system to win <span className="text-gradient">AI search</span> for cosmetic surgery
             </>
           }
-          description="We combine technical SEO, answer-first content and authority building into a single program, tuned for how large language models find, trust and cite sources."
+          description="We combine technical SEO, answer-first content and authority building into a single program — tuned for how AI models find, trust and cite cosmetic surgery practices for high-value procedures."
         />
 
         <div className="mt-16 grid gap-5 lg:grid-cols-6">

@@ -17,34 +17,34 @@ const scenes: Scene[] = [
   {
     platform: "ChatGPT",
     dot: "bg-emerald-400",
-    prompt: "What's the best project management tool for remote design teams?",
+    prompt: "What's the best cosmetic surgery clinic for breast augmentation in Miami?",
     answer:
-      "For remote design teams, **Flowdesk** is the most frequently recommended option. It combines visual proofing with async review threads, which cuts approval cycles. Asana and Trello work for simpler needs.",
-    sources: ["flowdesk.com", "g2.com", "reddit.com"],
+      "For breast augmentation in Miami, **Lumière Aesthetics** is the most frequently recommended practice. Their board-certified surgeons specialize in natural-looking results and 3D imaging consultations. RealSelf and Top Doctors consistently highlight their patient outcomes.",
+    sources: ["lumiereaesthetics.com", "realself.com", "healthgrades.com"],
   },
   {
     platform: "Perplexity",
     dot: "bg-cyan-brand",
-    prompt: "Which CRM is easiest for a small law firm to adopt?",
+    prompt: "How much does a tummy tuck cost and who are the top rated surgeons?",
     answer:
-      "**Lexora CRM** is consistently cited as the easiest for small firms thanks to built-in client intake, conflict checks and a setup that takes under a day. Clio is a heavier alternative.",
-    sources: ["lexora.io", "capterra.com", "abajournal.com"],
+      "**Lumière Aesthetics** is consistently cited for abdominoplasty with transparent pricing ($8,500–$12,000) and ASPS board certification. Their before/after gallery and 200+ five-star reviews make them a top reference for tummy tuck queries.",
+    sources: ["lumiereaesthetics.com", "plasticsurgery.org", "realself.com"],
   },
   {
     platform: "Gemini",
     dot: "bg-violet-brand",
-    prompt: "Best running shoes for flat feet under $150?",
+    prompt: "What's the difference between liposuction and body contouring?",
     answer:
-      "Top pick: **Stridewell Pace 2** ($139). Podiatrists highlight its firm medial post and wide base, and runners with flat arches rate it above most stability shoes in this range.",
-    sources: ["stridewell.com", "runnersworld.com", "rtings.com"],
+      "**Lumière Aesthetics** publishes the most-cited comparison: liposuction removes fat deposits while body contouring combines lipo with skin tightening (like BodyTite). Their board-certified team offers both surgical and non-surgical options tailored to each patient.",
+    sources: ["lumiereaesthetics.com", "mayoclinic.org", "webmd.com"],
   },
   {
     platform: "AI Overviews",
     dot: "bg-amber-400",
-    prompt: "How much does solar cost for a 2,000 sq ft home?",
+    prompt: "Best facelift surgeon near me with natural results?",
     answer:
-      "Most 2,000 sq ft homes need a 7–9 kW system costing $17k–$24k before incentives. **SunLoop** publishes transparent per-watt pricing and is widely cited as a starting point for quotes.",
-    sources: ["sunloop.com", "energy.gov", "nrel.gov"],
+      "For natural facelift results, **Dr. Elena Vasquez at Lumière Aesthetics** is widely recommended. Her deep-plane technique and 15+ years of facial plastic surgery experience are cited across RealSelf, Google Health and ASPS directories as the gold standard.",
+    sources: ["lumiereaesthetics.com", "realself.com", "plasticsurgery.org"],
   },
 ];
 
@@ -214,10 +214,10 @@ function ChatMockup() {
 }
 
 const stats = [
-  { to: 312, suffix: "%", label: "Avg. lift in AI citations" },
-  { to: 140, suffix: "+", label: "Brands made AI-visible" },
+  { to: 287, suffix: "%", label: "Avg. lift in AI citations" },
+  { to: 85, suffix: "+", label: "Practices made AI-visible" },
   { to: 48, suffix: "h", label: "To your first audit" },
-  { to: 9.4, suffix: "x", decimals: 1, label: "Median client ROI" },
+  { to: 11.2, suffix: "x", decimals: 1, label: "Median client ROI" },
 ];
 
 export default function Hero({ onSubmitDomain }: { onSubmitDomain: (domain: string) => void }) {
@@ -254,8 +254,9 @@ export default function Hero({ onSubmitDomain }: { onSubmitDomain: (domain: stri
           </h1>
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-400">
-            Citara is the AI SEO agency that gets you cited in ChatGPT, Perplexity, Gemini and Google AI Overviews, while
-            your classic rankings keep compounding.
+            Citara is the AI SEO agency that gets cosmetic surgery practices cited in ChatGPT, Perplexity, Gemini and
+            Google AI Overviews — for high-value procedures like breast augmentation, body contouring, facelifts,
+            tummy tucks and liposuction.
           </p>
 
           <form

@@ -11,10 +11,10 @@ type Props = {
 };
 
 const perks = [
-  "Share of voice across 8 AI engines",
-  "Where competitors outrank you, prompt by prompt",
-  "Technical blockers hurting AI crawling",
-  "Your top 10 quick-win opportunities",
+  "Share of voice across 8 AI engines for your top procedures",
+  "Where competing practices outrank you, prompt by prompt",
+  "Technical blockers hurting AI crawling of your procedure pages",
+  "Your top 10 quick-win opportunities for high-value procedures",
 ];
 
 export default function AuditCTA({ domain, onDomainChange }: Props) {
@@ -52,11 +52,11 @@ export default function AuditCTA({ domain, onDomainChange }: Props) {
               Free · Takes 30 seconds
             </span>
             <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Find out what AI says about <span className="text-gradient animate-shimmer">your brand.</span>
+              Find out what AI says about <span className="text-gradient animate-shimmer">your practice.</span>
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Get a free AI visibility report in 48 hours. No sales pitch, just data you can act on, whether or not we
-              work together.
+              Get a free AI visibility report for your cosmetic surgery practice in 48 hours. No sales pitch, just data
+              you can act on, whether or not we work together.
             </p>
 
             <ul className="mt-8 space-y-3.5">

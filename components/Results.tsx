@@ -5,32 +5,32 @@ import { SectionHeading } from "@/components/ui";
 
 const cases = [
   {
-    client: "Flowdesk",
-    industry: "B2B SaaS",
+    client: "Lumière Aesthetics",
+    industry: "Cosmetic Surgery · Miami",
     headline: { to: 340, prefix: "+", suffix: "%", label: "AI citations in 90 days" },
     metrics: [
-      { v: "5.2x", l: "Demo requests from AI referrals" },
-      { v: "#1", l: "Recommended in ChatGPT for 18 core prompts" },
+      { v: "5.2x", l: "Consultation bookings from AI referrals" },
+      { v: "#1", l: "Recommended in ChatGPT for breast augmentation queries" },
     ],
     accent: "from-lime-brand/20",
   },
   {
-    client: "Stridewell",
-    industry: "E-commerce",
-    headline: { to: 86, prefix: "+", suffix: "%", label: "Revenue from AI-referred traffic" },
+    client: "Velvet Contour",
+    industry: "Body Contouring · LA",
+    headline: { to: 86, prefix: "+", suffix: "%", label: "Revenue from AI-referred patients" },
     metrics: [
-      { v: "12", l: "Product categories where AI names them first" },
+      { v: "12", l: "Procedure categories where AI names them first" },
       { v: "3.4x", l: "Higher conversion vs. organic average" },
     ],
     accent: "from-cyan-brand/20",
   },
   {
-    client: "Lexora",
-    industry: "Legal tech",
-    headline: { to: 3.1, prefix: "", suffix: "x", decimals: 1, label: "Qualified pipeline in 6 months" },
+    client: "Maison Visage",
+    industry: "Facial Plastic Surgery · NYC",
+    headline: { to: 3.1, prefix: "", suffix: "x", decimals: 1, label: "Qualified patient pipeline in 6 months" },
     metrics: [
       { v: "64", l: "Queries now featured in AI Overviews" },
-      { v: "−38%", l: "Cost per qualified lead" },
+      { v: "−38%", l: "Cost per qualified patient lead" },
     ],
     accent: "from-violet-brand/25",
   },

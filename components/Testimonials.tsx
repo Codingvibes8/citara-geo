@@ -4,21 +4,21 @@ import { SectionHeading } from "@/components/ui";
 
 const quotes = [
   {
-    body: "We went from never being mentioned to being the first recommendation in ChatGPT for our category. Our sales team now hears “ChatGPT told me about you” on half of their discovery calls.",
-    name: "Maya Okonkwo",
-    role: "VP Marketing, Flowdesk",
+    body: "We went from never being mentioned to being the first recommendation in ChatGPT for breast augmentation in Miami. Our patient coordinators now hear 'ChatGPT recommended you' on nearly every new consultation call.",
+    name: "Dr. Elena Vasquez",
+    role: "Medical Director, Lumière Aesthetics",
     grad: "from-lime-brand to-cyan-brand",
   },
   {
-    body: "Other agencies sent us keyword reports. Citara sent us prompt-level share of voice and a roadmap tied to revenue. It's the first SEO partner our CFO actually understands.",
-    name: "Daniel Reyes",
-    role: "Founder, Stridewell",
+    body: "Other agencies sent us keyword reports. Citara sent us prompt-level share of voice for tummy tuck and body contouring queries — and a roadmap tied to surgical bookings. It's the first marketing partner our practice manager actually understands.",
+    name: "James Chen",
+    role: "Practice Manager, Velvet Contour",
     grad: "from-violet-brand to-cyan-brand",
   },
   {
-    body: "The technical audit alone found issues that were blocking AI crawlers from our best content. Fixed in a week. Visible in AI Overviews within a month.",
-    name: "Priya Raman",
-    role: "Head of Growth, Lexora",
+    body: "The technical audit alone found issues blocking AI crawlers from our facelift and rhinoplasty content. Fixed in a week. Visible in AI Overviews within a month. Our consultation rate is up 40%.",
+    name: "Dr. Sophie Laurent",
+    role: "Founder, Maison Visage",
     grad: "from-amber-300 to-lime-brand",
   },
 ];
@@ -27,7 +27,7 @@ export default function Testimonials() {
   return (
     <section className="relative px-5 py-24 sm:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="Client love" title="Marketing leaders who've made the shift" />
+        <SectionHeading eyebrow="Client love" title="Cosmetic surgery practices that made the shift" />
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {quotes.map((q, i) => (

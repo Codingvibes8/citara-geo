@@ -38,7 +38,8 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-zinc-500">
-              The AI SEO agency helping brands get discovered, cited and recommended across every answer engine.
+              The AI SEO agency helping cosmetic surgery practices get discovered, cited and recommended across every
+              answer engine.
             </p>
           </div>
 

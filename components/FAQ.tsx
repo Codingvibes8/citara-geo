@@ -8,16 +8,16 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    q: "What exactly is AI SEO (GEO / AEO)?",
-    a: "AI SEO (also called Generative Engine Optimization or Answer Engine Optimization) is the practice of making your brand easy for AI systems like ChatGPT, Perplexity, Gemini and Google AI Overviews to find, trust and recommend. It extends classic SEO with entity optimization, citation building and answer-first content.",
+    q: "What exactly is AI SEO for cosmetic surgery?",
+    a: "AI SEO (also called Generative Engine Optimization) is the practice of making your cosmetic surgery practice easy for AI systems like ChatGPT, Perplexity, Gemini and Google AI Overviews to find, trust and recommend. When patients ask 'who is the best breast augmentation surgeon near me,' we make sure your practice is the answer.",
   },
   {
-    q: "How is this different from traditional SEO?",
-    a: "Traditional SEO optimizes for ranked lists of links. AI search returns a single synthesized answer built from sources the model trusts. We still do the fundamentals that drive Google rankings, but we layer on what influences model recommendations: brand consensus across the web, structured data, quotable content and presence on the sources LLMs cite most.",
+    q: "How is this different from traditional medical SEO?",
+    a: "Traditional SEO optimizes for ranked lists of links. AI search returns a single synthesized answer built from sources the model trusts. We still do the fundamentals that drive Google rankings, but we layer on what influences model recommendations: surgeon credentials, board certifications, RealSelf reviews, structured data and presence on the medical sources LLMs cite most.",
   },
   {
     q: "How long until we see results?",
-    a: "Technical fixes and new content can start being picked up by AI crawlers within weeks. Most clients see measurable gains in AI share of voice within 60–90 days, with citation and pipeline impact compounding over the following quarters. Authority-building takes longer, but it's also the hardest for competitors to copy.",
+    a: "Technical fixes and new content can start being picked up by AI crawlers within weeks. Most cosmetic surgery practices see measurable gains in AI share of voice within 60–90 days, with citation and consultation impact compounding over the following quarters. Authority-building on medical directories takes longer, but it's also the hardest for competitors to copy.",
   },
   {
     q: "Can you guarantee we'll be mentioned by ChatGPT?",
@@ -25,15 +25,15 @@ const faqs = [
   },
   {
     q: "Do you use AI to write our content?",
-    a: "We use AI to accelerate research, outlining and analysis, but every page is shaped by a human strategist, fact-checked, enriched with original data or expert input, and edited by a senior writer. Models reward genuinely useful, verifiable content, not generic output.",
+    a: "We use AI to accelerate research, outlining and analysis, but every page is shaped by a human strategist with medical marketing experience, fact-checked for compliance, enriched with surgeon credentials and original data, and edited by a senior writer. Models reward genuinely useful, verifiable medical content, not generic output.",
   },
   {
     q: "Will this hurt our existing Google rankings?",
-    a: "The opposite. Clear structure, strong E-E-A-T signals, schema and authoritative citations are also what Google rewards. Most of our work improves traditional organic performance as a side effect.",
+    a: "The opposite. Clear structure, strong E-E-A-T signals, schema and authoritative medical citations are also what Google rewards. Most of our work improves traditional organic performance as a side effect.",
   },
   {
     q: "What do we need to get started?",
-    a: "Just your website and a short call. We'll run a free AI visibility audit showing where you stand today against your top competitors, with no commitment required.",
+    a: "Just your practice website and a short call. We'll run a free AI visibility audit showing where you stand today against your top competitors for high-value procedure queries, with no commitment required.",
   },
 ];
 

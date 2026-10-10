@@ -44,11 +44,11 @@ export default function Shift() {
           eyebrow="The shift"
           title={
             <>
-              Your buyers ask AI first.
+              Your patients ask AI first.
               <br className="hidden sm:block" /> <span className="text-zinc-500">Does it mention you?</span>
             </>
           }
-          description="Discovery is moving from lists of links to single, synthesized answers. Brands that AI trusts get recommended. Everyone else gets left out of the conversation. SEO isn't dead, but it's no longer enough."
+          description="Cosmetic surgery patients now research procedures on AI before they ever see a surgeon. Discovery is moving from lists of links to single, synthesized answers. Practices that AI trusts get recommended. Everyone else gets left out of the conversation. SEO isn't dead, but it's no longer enough."
         />
 
         <Reveal delay={100} className="mx-auto mt-14 max-w-4xl">
