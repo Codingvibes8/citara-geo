@@ -1,25 +1,23 @@
-import { Star } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui";
 
-const quotes = [
+const benefits = [
   {
-    body: "We went from never being mentioned to being the first recommendation in ChatGPT for breast augmentation in Miami. Our patient coordinators now hear 'ChatGPT recommended you' on nearly every new consultation call.",
-    name: "Dr. Elena Vasquez",
-    role: "Medical Director, Lumière Aesthetics",
-    grad: "from-lime-brand to-cyan-brand",
+    title: "Priority onboarding",
+    description: "Founding clients are onboarded first, with a dedicated strategist and a tailored 90-day roadmap from day one.",
   },
   {
-    body: "Other agencies sent us keyword reports. Citara sent us prompt-level share of voice for tummy tuck and body contouring queries — and a roadmap tied to surgical bookings. It's the first marketing partner our practice manager actually understands.",
-    name: "James Chen",
-    role: "Practice Manager, Velvet Contour",
-    grad: "from-violet-brand to-cyan-brand",
+    title: "Founding rate locked in",
+    description: "The rate you sign up at is locked for the duration of your engagement — even as pricing increases for later clients.",
   },
   {
-    body: "The technical audit alone found issues blocking AI crawlers from our facelift and rhinoplasty content. Fixed in a week. Visible in AI Overviews within a month. Our consultation rate is up 40%.",
-    name: "Dr. Sophie Laurent",
-    role: "Founder, Maison Visage",
-    grad: "from-amber-300 to-lime-brand",
+    title: "Direct senior access",
+    description: "Work directly with our senior strategists and founding team. No account managers, no hand-offs, no junior staff learning on your budget.",
+  },
+  {
+    title: "Quarterly strategy sessions",
+    description: "In-depth quarterly reviews where we walk through your visibility data, competitor movements and the next quarter's priorities together.",
   },
 ];
 
@@ -27,38 +25,52 @@ export default function Testimonials() {
   return (
     <section className="relative px-5 py-24 sm:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="Client love" title="Cosmetic surgery practices that made the shift" />
+        <SectionHeading
+          eyebrow="Founding client program"
+          title={
+            <>
+              Be one of the <span className="text-gradient">first practices</span> we work with
+            </>
+          }
+          description="We're selecting a small number of cosmetic surgery practices for our founding client program. In exchange for your feedback and a candid reference at the end of the engagement, you get priority access, a locked-in founding rate and direct access to our senior team."
+        />
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {quotes.map((q, i) => (
-            <Reveal key={q.name} delay={i * 90} className="h-full">
-              <figure className="flex h-full flex-col justify-between rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-7">
-                <div>
-                  <div className="flex gap-1" aria-label="5 out of 5 stars">
-                    {Array.from({ length: 5 }).map((_, s) => (
-                      <Star key={s} className="h-4 w-4 fill-lime-brand text-lime-brand" />
-                    ))}
-                  </div>
-                  <blockquote className="mt-5 text-[15.5px] leading-relaxed text-zinc-200">{q.body}</blockquote>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+          {benefits.map((b, i) => (
+            <Reveal key={b.title} delay={i * 90} className="h-full">
+              <div className="flex h-full flex-col rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-7">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-lime-brand/15 text-lime-brand">
+                  <CheckCircle2 className="h-5 w-5" />
                 </div>
-                <figcaption className="mt-8 flex items-center gap-3.5">
-                  <span
-                    className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${q.grad} font-display text-sm font-bold text-ink-950`}
-                  >
-                    {q.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
-                  <span>
-                    <span className="block text-sm font-semibold text-white">{q.name}</span>
-                    <span className="block text-[13px] text-zinc-500">{q.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
+                <h3 className="mt-5 font-display text-xl font-semibold text-white">{b.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-400">{b.description}</p>
+              </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={200} className="mt-12">
+          <div className="flex flex-col items-center gap-6 rounded-3xl border border-lime-brand/20 bg-lime-brand/[0.06] p-8 text-center sm:p-10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-brand text-ink-950">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-semibold text-white sm:text-3xl">
+                Applications are reviewed weekly
+              </h3>
+              <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-zinc-400">
+                We're intentionally keeping the founding program small so every practice gets senior attention. Request a free audit to start the conversation — there's no obligation.
+              </p>
+            </div>
+            <a
+              href="#audit"
+              className="group inline-flex items-center gap-2 rounded-full bg-lime-brand px-7 py-3.5 text-sm font-semibold text-ink-950 transition-all hover:shadow-[0_8px_30px_-6px_rgba(200,255,62,0.55)]"
+            >
+              Apply for the founding program
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

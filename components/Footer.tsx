@@ -21,11 +21,11 @@ const columns = [
     ],
   },
   {
-    title: "Contact",
+    title: "Legal",
     links: [
-      ["hello@citara.ai", "mailto:hello@citara.ai"],
-      ["Book a call", "#audit"],
-      ["Free AI audit", "#audit"],
+      ["Privacy Policy", "/privacy"],
+      ["Terms of Service", "/terms"],
+      ["Cookie Policy", "/cookies"],
     ],
   },
 ];
@@ -61,18 +61,25 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/[0.07] py-6 text-xs text-zinc-500 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Citara Labs, Inc. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#top" className="transition-colors hover:text-zinc-300">
-              Privacy
-            </a>
-            <a href="#top" className="transition-colors hover:text-zinc-300">
-              Terms
-            </a>
-            <a href="#top" className="transition-colors hover:text-zinc-300">
-              Back to top ↑
-            </a>
+        <div className="mt-14 border-t border-white/[0.07] py-6">
+          <div className="flex flex-col gap-4 text-xs text-zinc-500 sm:flex-row sm:items-start sm:justify-between">
+            <div className="space-y-1">
+              <p>© {new Date().getFullYear()} Citara Ltd. All rights reserved.</p>
+              <p>Citara Ltd is a company registered in England and Wales.</p>
+              <p>Company number: [YOUR COMPANY NUMBER]</p>
+              <p>Registered address: [YOUR REGISTERED ADDRESS]</p>
+            </div>
+            <div className="flex gap-6 sm:flex-shrink-0">
+              <a href="/privacy" className="transition-colors hover:text-zinc-300">
+                Privacy
+              </a>
+              <a href="/terms" className="transition-colors hover:text-zinc-300">
+                Terms
+              </a>
+              <a href="/cookies" className="transition-colors hover:text-zinc-300">
+                Cookies
+              </a>
+            </div>
           </div>
         </div>
       </div>

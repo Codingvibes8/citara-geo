@@ -120,7 +120,7 @@ export default function Pricing() {
                     {price ? (
                       <>
                         <span className="font-display text-5xl font-semibold tracking-tight text-white">
-                          ${price.toLocaleString("en-US")}
+                          £{price.toLocaleString("en-GB")}
                         </span>
                         <span className="text-sm text-zinc-500">/ month</span>
                       </>

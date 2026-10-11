@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "Perplexity SEO medical aesthetics",
   ],
   applicationName: "Citara",
-  authors: [{ name: "Citara Labs, Inc." }],
+  authors: [{ name: "Citara Ltd" }],
   openGraph: {
     type: "website",
     siteName: "Citara",

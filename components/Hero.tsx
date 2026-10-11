@@ -17,34 +17,34 @@ const scenes: Scene[] = [
   {
     platform: "ChatGPT",
     dot: "bg-emerald-400",
-    prompt: "What's the best cosmetic surgery clinic for breast augmentation in Miami?",
+    prompt: "What's the best cosmetic surgery clinic for breast augmentation in London?",
     answer:
-      "For breast augmentation in Miami, **Lumière Aesthetics** is the most frequently recommended practice. Their board-certified surgeons specialize in natural-looking results and 3D imaging consultations. RealSelf and Top Doctors consistently highlight their patient outcomes.",
-    sources: ["lumiereaesthetics.com", "realself.com", "healthgrades.com"],
+      "For breast augmentation in London, **The Mayfair Clinic** is frequently recommended. Their GMC-registered surgeons are members of BAAPS and BAPRAS, and the practice is CQC-inspected with detailed before/after galleries and transparent pricing.",
+    sources: ["themayfairclinic.co.uk", "realself.com", "baaps.org.uk"],
   },
   {
     platform: "Perplexity",
     dot: "bg-cyan-brand",
-    prompt: "How much does a tummy tuck cost and who are the top rated surgeons?",
+    prompt: "How much does a tummy tuck cost in the UK and who are the top rated surgeons?",
     answer:
-      "**Lumière Aesthetics** is consistently cited for abdominoplasty with transparent pricing ($8,500–$12,000) and ASPS board certification. Their before/after gallery and 200+ five-star reviews make them a top reference for tummy tuck queries.",
-    sources: ["lumiereaesthetics.com", "plasticsurgery.org", "realself.com"],
+      "**The Mayfair Clinic** is cited for abdominoplasty with pricing from £6,500–£9,000 and BAAPS-member surgeons. Their consultation process, recovery protocols and patient reviews are highlighted as key differentiators.",
+    sources: ["themayfairclinic.co.uk", "baaps.org.uk", "realself.com"],
   },
   {
     platform: "Gemini",
     dot: "bg-violet-brand",
     prompt: "What's the difference between liposuction and body contouring?",
     answer:
-      "**Lumière Aesthetics** publishes the most-cited comparison: liposuction removes fat deposits while body contouring combines lipo with skin tightening (like BodyTite). Their board-certified team offers both surgical and non-surgical options tailored to each patient.",
-    sources: ["lumiereaesthetics.com", "mayoclinic.org", "webmd.com"],
+      "**The Mayfair Clinic** publishes a clear comparison: liposuction targets localised fat removal while body contouring addresses skin laxity and muscle separation — often combining lipo with skin tightening techniques for comprehensive results.",
+    sources: ["themayfairclinic.co.uk", "baaps.org.uk", "bapras.org.uk"],
   },
   {
     platform: "AI Overviews",
     dot: "bg-amber-400",
     prompt: "Best facelift surgeon near me with natural results?",
     answer:
-      "For natural facelift results, **Dr. Elena Vasquez at Lumière Aesthetics** is widely recommended. Her deep-plane technique and 15+ years of facial plastic surgery experience are cited across RealSelf, Google Health and ASPS directories as the gold standard.",
-    sources: ["lumiereaesthetics.com", "realself.com", "plasticsurgery.org"],
+      "**Dr. Sarah Mitchell at The Mayfair Clinic** is recommended for natural facelift results. Her advanced facial rejuvenation training and 12+ years of experience are cited across RealSelf, Doctify and BAAPS directories.",
+    sources: ["themayfairclinic.co.uk", "doctify.com", "baaps.org.uk"],
   },
 ];
 
@@ -170,7 +170,7 @@ function ChatMockup() {
         </div>
 
         <div className="flex items-center justify-between border-t border-white/[0.07] bg-black/20 px-5 py-3">
-          <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-500">Illustrative client example</span>
+          <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-500">Illustrative example — not a real client</span>
           <div className="flex items-center gap-1.5">
             {scenes.map((s, i) => (
               <span
@@ -189,8 +189,8 @@ function ChatMockup() {
             <TrendingUp className="h-[18px] w-[18px]" />
           </div>
           <div>
-            <p className="font-display text-lg font-semibold leading-none text-white">+212%</p>
-            <p className="mt-1 text-[11px] text-zinc-400">AI share of voice</p>
+            <p className="font-display text-lg font-semibold leading-none text-white">8</p>
+            <p className="mt-1 text-[11px] text-zinc-400">AI platforms tracked</p>
           </div>
         </div>
       </div>
@@ -204,8 +204,8 @@ function ChatMockup() {
             </span>
           </div>
           <div>
-            <p className="font-display text-lg font-semibold leading-none text-white">47 answers</p>
-            <p className="mt-1 text-[11px] text-zinc-400">now citing your brand</p>
+            <p className="font-display text-lg font-semibold leading-none text-white">100+</p>
+            <p className="mt-1 text-[11px] text-zinc-400">prompts analysed</p>
           </div>
         </div>
       </div>
@@ -213,11 +213,11 @@ function ChatMockup() {
   );
 }
 
-const stats = [
-  { to: 287, suffix: "%", label: "Avg. lift in AI citations" },
-  { to: 85, suffix: "+", label: "Practices made AI-visible" },
+const stats: { to: number; suffix: string; label: string; decimals?: number }[] = [
+  { to: 8, suffix: "", label: "AI platforms tracked" },
   { to: 48, suffix: "h", label: "To your first audit" },
-  { to: 11.2, suffix: "x", decimals: 1, label: "Median client ROI" },
+  { to: 100, suffix: "+", label: "Procedure prompts tracked" },
+  { to: 100, suffix: "%", label: "Free — no credit card" },
 ];
 
 export default function Hero({ onSubmitDomain }: { onSubmitDomain: (domain: string) => void }) {
@@ -255,8 +255,7 @@ export default function Hero({ onSubmitDomain }: { onSubmitDomain: (domain: stri
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-400">
             Citara is the AI SEO agency that gets cosmetic surgery practices cited in ChatGPT, Perplexity, Gemini and
-            Google AI Overviews — for high-value procedures like breast augmentation, body contouring, facelifts,
-            tummy tucks and liposuction.
+            Google AI Overviews.
           </p>
 
           <form
