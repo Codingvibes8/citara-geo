@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui";
+import CalLink from "@/components/CalLink";
 import { cn } from "@/lib/utils";
 
 const tiers = [
@@ -129,8 +130,8 @@ export default function Pricing() {
                     )}
                   </div>
 
-                  <a
-                    href="#audit"
+                  <CalLink
+                    location={`pricing-${t.name}`}
                     className={cn(
                       "mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all",
                       t.popular
@@ -139,7 +140,7 @@ export default function Pricing() {
                     )}
                   >
                     {t.cta}
-                  </a>
+                  </CalLink>
 
                   <ul className="mt-8 space-y-3.5 border-t border-white/[0.07] pt-8">
                     {t.features.map((f) => (

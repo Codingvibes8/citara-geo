@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui";
+import CalLink from "@/components/CalLink";
 
 const benefits = [
   {
@@ -62,13 +63,13 @@ export default function Testimonials() {
                 We're intentionally keeping the founding program small so every practice gets senior attention. Request a free audit to start the conversation — there's no obligation.
               </p>
             </div>
-            <a
-              href="#audit"
+            <CalLink
+              location="testimonials"
               className="group inline-flex items-center gap-2 rounded-full bg-lime-brand px-7 py-3.5 text-sm font-semibold text-ink-950 transition-all hover:shadow-[0_8px_30px_-6px_rgba(200,255,62,0.55)]"
             >
               Apply for the founding program
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </CalLink>
           </div>
         </Reveal>
       </div>

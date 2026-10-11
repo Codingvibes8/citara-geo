@@ -3,11 +3,19 @@
 import { useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2, Globe, Mail, User } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import CalLink from "@/components/CalLink";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 type Props = {
   domain: string;
   onDomainChange: (v: string) => void;
+};
+
+type FieldErrors = {
+  domain?: string;
+  name?: string;
+  email?: string;
 };
 
 const perks = [
@@ -20,24 +28,64 @@ const perks = [
 export default function AuditCTA({ domain, onDomainChange }: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
+  const [website, setWebsite] = useState(""); // honeypot — hidden from users, bots get discarded
+  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [formError, setFormError] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (status === "loading") return;
+    setErrors({});
+    setFormError("");
     setStatus("loading");
-    window.setTimeout(() => setStatus("done"), 1100);
+
+    try {
+      const res = await fetch("/api/audit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ domain, name, email, website }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+        errors?: FieldErrors;
+      };
+
+      if (!res.ok || !data.ok) {
+        if (data.errors) setErrors(data.errors);
+        setFormError(data.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      trackEvent("audit_submit", { domain });
+      setStatus("done");
+    } catch {
+      setFormError("Network error — please check your connection and try again.");
+      setStatus("error");
+    }
   };
 
   const reset = () => {
     setStatus("idle");
     setName("");
     setEmail("");
+    setWebsite("");
+    setErrors({});
+    setFormError("");
     onDomainChange("");
   };
 
   const field =
-    "h-12 w-full rounded-xl border border-white/10 bg-black/30 pl-11 pr-4 text-sm text-white placeholder:text-zinc-500 transition-colors focus:border-lime-brand/60 focus:outline-none focus:ring-2 focus:ring-lime-brand/20";
+    "h-12 w-full rounded-xl border bg-black/30 pl-11 pr-4 text-sm text-white placeholder:text-zinc-500 transition-colors focus:outline-none focus:ring-2";
+  const fieldTone = (hasError?: string) =>
+    hasError
+      ? "border-red-500/50 focus:border-red-500/60 focus:ring-red-500/20"
+      : "border-white/10 focus:border-lime-brand/60 focus:ring-lime-brand/20";
+
+  const fieldError = (msg?: string) =>
+    msg ? <p className="mt-1.5 text-xs text-red-400">{msg}</p> : null;
 
   return (
     <section id="audit" className="relative scroll-mt-16 px-5 pb-24 pt-8 sm:px-8 lg:pb-32">
@@ -67,6 +115,16 @@ export default function AuditCTA({ domain, onDomainChange }: Props) {
                 </li>
               ))}
             </ul>
+
+            <p className="mt-8 text-sm text-zinc-500">
+              Want to talk first?{" "}
+              <CalLink
+                location="audit-section"
+                className="font-medium text-lime-brand underline decoration-lime-brand/40 underline-offset-4 transition-colors hover:decoration-lime-brand"
+              >
+                Book a 15-minute intro call
+              </CalLink>
+            </p>
           </div>
 
           <div className="glass rounded-3xl bg-ink-950/60 p-6 sm:p-8">
@@ -88,57 +146,89 @@ export default function AuditCTA({ domain, onDomainChange }: Props) {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                 <div>
                   <h3 className="font-display text-2xl font-semibold text-white">Request your free audit</h3>
                   <p className="mt-1.5 text-sm text-zinc-500">We&apos;ll email your report within 48 hours.</p>
                 </div>
 
-                <div className="relative">
-                  <label htmlFor="f-site" className="sr-only">
-                    Website
-                  </label>
-                  <Globe className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
-                  <input
-                    id="f-site"
-                    required
-                    value={domain}
-                    onChange={(e) => onDomainChange(e.target.value)}
-                    placeholder="yourwebsite.com"
-                    className={field}
-                  />
+                {/* Honeypot — hidden from users; any value here means bot */}
+                <input
+                  type="text"
+                  name="website"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -left-[9999px] h-0 w-0 opacity-0"
+                />
+
+                <div>
+                  <div className="relative">
+                    <label htmlFor="f-site" className="sr-only">
+                      Website
+                    </label>
+                    <Globe className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+                    <input
+                      id="f-site"
+                      required
+                      value={domain}
+                      onChange={(e) => onDomainChange(e.target.value)}
+                      placeholder="yourwebsite.com"
+                      aria-invalid={!!errors.domain}
+                      className={cn(field, fieldTone(errors.domain))}
+                    />
+                  </div>
+                  {fieldError(errors.domain)}
                 </div>
-                <div className="relative">
-                  <label htmlFor="f-name" className="sr-only">
-                    Full name
-                  </label>
-                  <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
-                  <input
-                    id="f-name"
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Full name"
-                    autoComplete="name"
-                    className={field}
-                  />
+
+                <div>
+                  <div className="relative">
+                    <label htmlFor="f-name" className="sr-only">
+                      Full name
+                    </label>
+                    <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+                    <input
+                      id="f-name"
+                      required
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Full name"
+                      autoComplete="name"
+                      aria-invalid={!!errors.name}
+                      className={cn(field, fieldTone(errors.name))}
+                    />
+                  </div>
+                  {fieldError(errors.name)}
                 </div>
-                <div className="relative">
-                  <label htmlFor="f-email" className="sr-only">
-                    Work email
-                  </label>
-                  <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
-                  <input
-                    id="f-email"
-                    required
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Work email"
-                    autoComplete="email"
-                    className={field}
-                  />
+
+                <div>
+                  <div className="relative">
+                    <label htmlFor="f-email" className="sr-only">
+                      Work email
+                    </label>
+                    <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+                    <input
+                      id="f-email"
+                      required
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Work email"
+                      autoComplete="email"
+                      aria-invalid={!!errors.email}
+                      className={cn(field, fieldTone(errors.email))}
+                    />
+                  </div>
+                  {fieldError(errors.email)}
                 </div>
+
+                {formError ? (
+                  <p role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                    {formError}
+                  </p>
+                ) : null}
 
                 <button
                   type="submit"

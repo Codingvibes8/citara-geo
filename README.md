@@ -15,10 +15,14 @@ Built with **Next.js 16 (App Router)**, **TypeScript** and **Tailwind CSS v4**.
 | UI runtime | React 19.3                                    | `app/page.tsx` stays a server component                    |
 | Language   | TypeScript 5                                  | `strict` mode, path alias `@/*` → project root             |
 | Styling    | Tailwind CSS v4                               | CSS-first config — **no `tailwind.config.js`**             |
-| Icons      | [lucide-react](https://lucide.dev)            | Tree-shakeable icon set                                    |
+| Icons      | [lucide-react](https://lucide-dev)            | Tree-shakeable icon set                                    |
 | Utilities  | `clsx` + `tailwind-merge`                     | Exposed through the `cn()` helper in `lib/utils.ts`        |
 | Fonts      | `next/font/google`                            | Inter, Bricolage Grotesque, JetBrains Mono (self-hosted)   |
 | Linting    | ESLint 9 (flat config)                        | `eslint-config-next` core-web-vitals + TypeScript presets  |
+| Validation | [zod](https://zod.dev)                        | Audit form schema (`lib/validation.ts`)                    |
+| Data       | [Supabase](https://supabase.com)              | Lead storage (`audit_requests` table, RLS-enabled)         |
+| Email      | [Resend](https://resend.com)                  | Owner notifications + lead confirmations (`lib/email.ts`)  |
+| Analytics  | [Vercel Analytics](https://vercel.com/analytics) | `audit_submit` + `booking_click` custom events          |
 
 ## Getting started
 
@@ -141,6 +145,41 @@ npm run start   # or let the platform run the build
 
 Set the canonical URL in `metadataBase` (`app/layout.tsx`) to your production
 domain so Open Graph and Twitter cards resolve correctly.
+
+## Conversion path
+
+The audit form (`components/AuditCTA.tsx`) POSTs to `app/api/audit/route.ts`,
+which:
+
+1. **Blocks bots** — a hidden honeypot field (`website`) silently discards
+   spam submissions.
+2. **Validates input** — Zod schema in `lib/validation.ts` (domain format,
+   name, email) with inline field errors returned to the form.
+3. **Rate limits** — max 3 submissions/email/hour and 10/IP/hour
+   (in-memory, per instance).
+4. **Stores the lead** — inserts into `public.audit_requests` in Supabase
+   using the service-role key (RLS enabled, no client access).
+5. **Sends email via Resend** — a notification to `NOTIFICATION_EMAIL` and a
+   confirmation to the lead (templates in `lib/email.ts`).
+
+### Setup checklist
+
+1. **Supabase** — run `supabase/migrations/20251011_create_audit_requests.sql`
+   in the SQL editor, then set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`
+   in your Vercel project env vars.
+2. **Resend** — create an API key, verify the `citara.ai` domain in Resend
+   (this also produces the DKIM records you need for deliverability), and set
+   `RESEND_API_KEY`.
+3. **Cal.com** — set `NEXT_PUBLIC_CAL_URL` to your booking link. It is the
+   primary CTA (navbar, hero, pricing, testimonials, visibility section); the
+   audit form is the secondary CTA.
+4. **Analytics** — Vercel Analytics is mounted in `app/layout.tsx` and tracks
+   two custom events: `audit_submit` (successful form submission) and
+   `booking_click` (Cal.com link clicks, with a `location` property). To use
+   Plausible instead, load its script and set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`
+   — events fan out automatically via `lib/analytics.ts`.
+
+See `.env.example` for the full list of environment variables.
 
 ## License
 

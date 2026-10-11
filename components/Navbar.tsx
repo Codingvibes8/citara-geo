@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui";
+import CalLink from "@/components/CalLink";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -58,11 +59,17 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="#audit"
-            className="group inline-flex items-center gap-1.5 rounded-full bg-lime-brand px-5 py-2.5 text-sm font-semibold text-ink-950 transition-all hover:shadow-[0_8px_30px_-6px_rgba(200,255,62,0.55)]"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.03] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/[0.07]"
           >
             Free AI audit
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
+          <CalLink
+            location="navbar"
+            className="group inline-flex items-center gap-1.5 rounded-full bg-lime-brand px-5 py-2.5 text-sm font-semibold text-ink-950 transition-all hover:shadow-[0_8px_30px_-6px_rgba(200,255,62,0.55)]"
+          >
+            Book a call
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </CalLink>
         </div>
 
         <button
@@ -94,13 +101,20 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href="#audit"
+          <CalLink
+            location="navbar-mobile"
             onClick={() => setOpen(false)}
             className="mt-3 flex items-center justify-center gap-2 rounded-full bg-lime-brand px-5 py-3 text-sm font-semibold text-ink-950"
           >
-            Get my free AI audit
+            Book a call
             <ArrowUpRight className="h-4 w-4" />
+          </CalLink>
+          <a
+            href="#audit"
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white"
+          >
+            Get my free AI audit
           </a>
         </div>
       </div>

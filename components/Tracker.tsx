@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Eye, Hash, Quote, SmilePlus } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { Eyebrow } from "@/components/ui";
+import CalLink from "@/components/CalLink";
 import { cn } from "@/lib/utils";
 
 type PlatformKey = "all" | "chatgpt" | "perplexity" | "gemini" | "aio" | "claude";
@@ -204,13 +205,13 @@ export default function Tracker() {
             </div>
           </div>
 
-          <a
-            href="#audit"
+          <CalLink
+            location="visibility"
             className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold text-lime-brand"
           >
             See your own baseline
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
+          </CalLink>
         </Reveal>
 
         <Reveal delay={120}>

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Check, Globe, Quote, Sparkles, TrendingUp } from "lucide-react";
 import CountUp from "@/components/CountUp";
+import CalLink from "@/components/CalLink";
 import { cn } from "@/lib/utils";
 
 type Scene = {
@@ -294,6 +295,16 @@ export default function Hero({ onSubmitDomain }: { onSubmitDomain: (domain: stri
               </li>
             ))}
           </ul>
+
+          <p className="mt-4 flex items-center gap-1.5 text-[13px] text-zinc-500">
+            or
+            <CalLink
+              location="hero"
+              className="font-medium text-zinc-300 underline decoration-zinc-600 underline-offset-4 transition-colors hover:text-lime-brand hover:decoration-lime-brand"
+            >
+              book a 15-minute intro call
+            </CalLink>
+          </p>
         </div>
 
         <div className="relative lg:pl-4">
