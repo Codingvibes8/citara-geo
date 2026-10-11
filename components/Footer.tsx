@@ -4,18 +4,19 @@ const columns = [
   {
     title: "Services",
     links: [
-      ["Generative Engine Optimization", "#services"],
-      ["AI Visibility Audit", "#services"],
-      ["Technical SEO", "#services"],
-      ["Content Engine", "#services"],
-      ["Citation & PR", "#services"],
+      ["Generative Engine Optimization", "/services/generative-engine-optimization"],
+      ["AI Visibility Audit", "/services/ai-visibility-audit"],
+      ["Technical SEO", "/services/ai-ready-technical-seo"],
+      ["Content Engine", "/services/answer-first-content-engine"],
+      ["Citation & PR", "/services/citation-digital-pr"],
+      ["Prompt Tracking", "/services/prompt-tracking-reporting"],
     ],
   },
   {
     title: "Company",
     links: [
-      ["Results", "#results"],
-      ["Process", "#process"],
+      ["UK Procedure Costs", "/costs/uk-procedures"],
+      ["Research", "/research"],
       ["Pricing", "#pricing"],
       ["FAQ", "#faq"],
     ],

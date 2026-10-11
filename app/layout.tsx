@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://citara.ai"),
-  title: "Citara — AI SEO Agency for Cosmetic Surgery Practices",
+  title: {
+    default: "Citara — AI SEO Agency for Cosmetic Surgery Practices",
+    template: "%s — Citara",
+  },
   description:
     "Citara is the AI SEO agency that gets cosmetic surgery practices recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — for high-value procedures like breast augmentation, body contouring, facelifts, tummy tucks and liposuction.",
   keywords: [
@@ -40,6 +44,7 @@ export const metadata: Metadata = {
   ],
   applicationName: "Citara",
   authors: [{ name: "Citara Ltd" }],
+  category: "technology",
   openGraph: {
     type: "website",
     siteName: "Citara",
@@ -47,12 +52,26 @@ export const metadata: Metadata = {
     description:
       "Get your cosmetic surgery practice recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — for breast augmentation, body contouring, facelifts, tummy tucks and liposuction.",
     url: "/",
+    locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
     title: "Citara — AI SEO Agency for Cosmetic Surgery Practices",
     description:
       "Get your cosmetic surgery practice recommended by ChatGPT, Perplexity, Gemini and Google AI Overviews — for breast augmentation, body contouring, facelifts, tummy tucks and liposuction.",
+  },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -67,6 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`scroll-smooth ${inter.variable} ${bricolage.variable} ${jetbrainsMono.variable}`}
     >
       <body>
+        <JsonLd type="Organization" />
         {children}
         <Analytics />
       </body>
